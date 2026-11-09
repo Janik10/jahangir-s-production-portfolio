@@ -32,16 +32,6 @@ const projects: Project[] = [
     outcome: "DKT reaches 0.758 ± 0.005 AUC on held-out students on ASSISTments 2009, within 0.004 of published results. Write-up in progress.",
     inProgress: true,
   },
-  {
-    title: "SAFE-POS",
-    subtitle: "Anomaly detection for point-of-sale fraud",
-    problem: "Restaurants lose revenue to cashier fraud that goes unnoticed.",
-    solution: "A POS system that flags possible cashier fraud by comparing transaction logs with shift logs, with backend services and schemas designed for anomaly detection.",
-    tech: ["FastAPI", "PostgreSQL", "React", "Python"],
-    outcome: "In development; a restaurant pilot is in preparation.",
-    link: "https://github.com/Janik10/SAFE-POS",
-    inProgress: true,
-  },
 ];
 
 export const Projects = () => {
@@ -55,7 +45,7 @@ export const Projects = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-2 gap-6">
           {projects.map((project) => (
             <div
               key={project.title}
