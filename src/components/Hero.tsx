@@ -9,7 +9,7 @@ export const Hero = () => {
       <div className="container mx-auto max-w-4xl text-center relative z-10">
         <div className="mb-6 inline-flex items-center gap-2 px-4 py-2 rounded-full border border-border bg-card/50 text-sm text-muted-foreground">
           <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-          Open to Summer 2026 Internships
+          Open to Summer 2027 Internships
         </div>
 
         <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 text-foreground leading-tight">
@@ -17,11 +17,11 @@ export const Hero = () => {
         </h1>
 
         <p className="text-lg md:text-xl text-muted-foreground mb-4 max-w-2xl mx-auto">
-          Backend & Full-Stack Engineer
+          ML & Backend Engineer
         </p>
 
         <p className="text-base text-muted-foreground mb-8 max-w-xl mx-auto">
-          CS @ Arizona State University • Building production-grade systems with Python, Node.js, and AI
+          CS @ UW–Madison • Building AI systems for education
         </p>
 
         <div className="flex flex-wrap items-center justify-center gap-4 mb-12">

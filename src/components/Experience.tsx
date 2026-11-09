@@ -51,11 +51,11 @@ export const Experience = () => {
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-primary mt-1">▸</span>
-                    Collaborated in a 5-person agile startup engineering team
+                    Worked in a 5-person agile engineering team
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-primary mt-1">▸</span>
-                    Optimized API response times and database queries, improving performance by 30%
+                    Reduced median API response time ~30% through query optimization and caching
                   </li>
                 </ul>
               </div>

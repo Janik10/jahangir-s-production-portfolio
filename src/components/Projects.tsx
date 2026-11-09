@@ -1,4 +1,4 @@
-import { ExternalLink, Github, Play } from "lucide-react";
+import { ExternalLink, Github } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 
@@ -9,44 +9,38 @@ interface Project {
   solution: string;
   tech: string[];
   outcome: string;
-  hasDemo?: boolean;
+  link?: string;
   inProgress?: boolean;
 }
 
 const projects: Project[] = [
   {
-    title: "Edwin AI",
-    subtitle: "AI-Powered Canvas Learning Assistant",
-    problem: "Students lack personalized, real-time support for navigating course materials and assessments.",
-    solution: "Built a Chrome extension integrating with Canvas LMS to automate course Q&A, adaptive quizzes, and progress analytics. Integrated Snowflake for secure storage and GPT-4 for grounded responses using Retrieval-Augmented Generation.",
-    tech: ["React", "Flask", "OpenAI GPT-4", "Snowflake DB", "RAG Pipeline"],
-    outcome: "2nd Place at DevHacks 2025 (1,100+ participants; 130+ teams). Demonstrates backend design, prompt engineering, and AI data-pipeline development under a 24-hour deadline.",
-    hasDemo: true,
+    title: "Edwin",
+    subtitle: "Course learning platform with per-student mastery tracking",
+    problem: "In large courses, instructors only learn what students didn't understand when exam grades come back, and general chatbots answer from outside the course.",
+    solution: "An AI assistant that answers from the course's own materials with citations, plus quizzes, a discussion board and a Bayesian per-topic mastery model that shows instructors where the class is stuck. Built with deletion, retention and privacy controls for student data.",
+    tech: ["Python", "Flask", "PostgreSQL", "Redis", "Docker", "Gemini", "RAG"],
+    outcome: "Piloted in ASU's CSE 310 with 42 enrolled students. 2nd of 130+ teams at SunHacks 2025. Currently in UW–Madison's security and privacy review.",
+    link: "https://edwinlearning.com",
   },
   {
-    title: "Nebulo",
-    subtitle: "Student Tech Collaboration Platform",
-    problem: "Students struggle to find collaborators and form project teams efficiently.",
-    solution: "Built a full-stack platform connecting 100+ students to form teams, chat, and launch projects. Implemented real-time chat, team-matching algorithms, and a feed system. Designed REST APIs and secure authentication with JWT + password hashing.",
-    tech: ["React", "Node.js", "Express.js", "MySQL", "JWT", "Prisma ORM", "AWS (RDS, S3)", "Socket.io"],
-    outcome: "Deployed infrastructure using AWS RDS (MySQL), S3 for media storage, and hosted backend on Render. Platform actively used by 100+ student collaborators.",
-  },
-  {
-    title: "SAFE-POS",
-    subtitle: "Fraud-Detection Point-of-Sale System",
-    problem: "Restaurant chains lose revenue due to undetected cashier fraud.",
-    solution: "Engineering an AI-driven POS system detecting cashier fraud by comparing transaction logs and shift logs. Building predictive models to flag anomalous behavior patterns.",
-    tech: ["FastAPI", "PostgreSQL", "React", "Python"],
-    outcome: "Preparing pilot deployment with 3+ restaurant chains in Kazakhstan.",
+    title: "kt-bench",
+    subtitle: "Benchmarking knowledge-tracing models",
+    problem: "Which model best predicts whether a student will answer the next question correctly, and does a simple Bayesian model hold up against deep learning?",
+    solution: "Implemented DKT (LSTM) and SAKT (self-attention) from scratch in PyTorch and benchmarked them against BKT, PFA and a Bayesian baseline on ASSISTments 2009 and EdNet, with student-level held-out splits, leakage tests and CI.",
+    tech: ["PyTorch", "pandas", "PyArrow", "scikit-learn", "GitHub Actions"],
+    outcome: "DKT reaches 0.758 ± 0.005 AUC on held-out students on ASSISTments 2009, within 0.004 of published results. Write-up in progress.",
     inProgress: true,
   },
   {
-    title: "Fashion Tinder",
-    subtitle: "AI-Driven Fashion Discovery App",
-    problem: "Fashion discovery is fragmented and lacks personalized recommendations.",
-    solution: "Built a swipe-based fashion discovery app using brand CSV ingestion and JWT authentication. Replaced mock data with real brand datasets and built end-to-end backend.",
-    tech: ["React (Vite)", "Express.js", "MySQL", "JWT"],
-    outcome: "Full-stack implementation with real brand data integration and secure user authentication system.",
+    title: "SAFE-POS",
+    subtitle: "Anomaly detection for point-of-sale fraud",
+    problem: "Restaurants lose revenue to cashier fraud that goes unnoticed.",
+    solution: "A POS system that flags possible cashier fraud by comparing transaction logs with shift logs, with backend services and schemas designed for anomaly detection.",
+    tech: ["FastAPI", "PostgreSQL", "React", "Python"],
+    outcome: "In development; a restaurant pilot is in preparation.",
+    link: "https://github.com/Janik10/SAFE-POS",
+    inProgress: true,
   },
 ];
 
@@ -57,11 +51,11 @@ export const Projects = () => {
         <div className="mb-16 text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Projects</h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Production systems across backend, full-stack, and applied AI.
+            AI for education, from product to model evaluation.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {projects.map((project) => (
             <div
               key={project.title}
@@ -79,18 +73,13 @@ export const Projects = () => {
                   </div>
                   <p className="text-sm text-muted-foreground">{project.subtitle}</p>
                 </div>
-                <div className="flex gap-2">
-                  {project.hasDemo && (
-                    <Button variant="ghost" size="icon" className="h-8 w-8 text-muted-foreground hover:text-primary">
-                      <Play size={16} />
-                    </Button>
-                  )}
+                {project.link && (
                   <Button asChild variant="ghost" size="icon" className="h-8 w-8 text-muted-foreground hover:text-primary">
-                    <a href="https://github.com/Janik10" target="_blank" rel="noopener noreferrer">
-                      <Github size={16} />
+                    <a href={project.link} target="_blank" rel="noopener noreferrer">
+                      {project.link.includes("github.com") ? <Github size={16} /> : <ExternalLink size={16} />}
                     </a>
                   </Button>
-                </div>
+                )}
               </div>
 
               <div className="space-y-3 mb-4">
@@ -118,15 +107,6 @@ export const Projects = () => {
                   </span>
                 ))}
               </div>
-
-              {project.hasDemo && (
-                <div className="mt-4 pt-4 border-t border-border">
-                  <Button variant="outline" size="sm" className="text-sm border-primary/50 text-primary hover:bg-primary hover:text-primary-foreground">
-                    <Play className="mr-2 h-3 w-3" />
-                    Watch Demo
-                  </Button>
-                </div>
-              )}
             </div>
           ))}
         </div>

@@ -5,20 +5,20 @@ interface SkillCategory {
 
 const skillCategories: SkillCategory[] = [
   {
+    title: "Machine Learning",
+    skills: ["PyTorch", "Bayesian inference", "Bandits / Thompson sampling", "Knowledge tracing", "Model evaluation & calibration", "RAG"],
+  },
+  {
     title: "Languages",
-    skills: ["Python", "JavaScript (ES6+)", "C", "C++", "Java", "SQL", "HTML/CSS"],
+    skills: ["Python", "SQL", "TypeScript", "JavaScript", "Java", "C"],
   },
   {
-    title: "Frameworks & Tools",
-    skills: ["React", "Node.js", "Flask", "FastAPI", "Tailwind", "MySQL", "PostgreSQL", "Prisma ORM"],
+    title: "Backend & Data",
+    skills: ["Flask", "FastAPI", "Node.js", "PostgreSQL", "Redis", "Pandas", "NumPy"],
   },
   {
-    title: "AI & Data",
-    skills: ["OpenAI GPT-4 API", "RAG", "Embeddings", "Snowflake", "Snowflake API", "Pandas"],
-  },
-  {
-    title: "Cloud & Other",
-    skills: ["AWS (RDS, S3)", "Linux", "Git/GitHub", "REST APIs", "Chrome Extensions", "Agile Development"],
+    title: "Infrastructure",
+    skills: ["Docker", "AWS", "Linux", "Git / GitHub Actions", "React", "REST APIs"],
   },
 ];
 

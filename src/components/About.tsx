@@ -11,18 +11,18 @@ export const About = () => {
         <div className="grid md:grid-cols-2 gap-8 items-center">
           <div className="space-y-4">
             <p className="text-muted-foreground leading-relaxed">
-              I'm a systems-focused software engineer who builds production-grade software that scales. 
-              My work spans backend development, full-stack applications, and applied AI — with a focus on 
-              designing reliable APIs, optimizing data pipelines, and shipping features that solve real problems.
+              I'm a Computer Sciences student at UW–Madison who builds AI systems for education. My main
+              project is Edwin, a course learning platform that answers students' questions from their own
+              course materials and tracks what each student understands, topic by topic.
             </p>
             <p className="text-muted-foreground leading-relaxed">
-              At Yolgen, I developed backend systems powering AI-driven career insights. At ASU, I lead 
-              project teams that win hackathons by combining strong engineering with practical AI integration. 
-              I prioritize code quality, system reliability, and measurable outcomes over surface-level features.
+              I care about measuring whether things actually work. That's why I built kt-bench, a benchmark
+              that tests my own mastery model against deep learning baselines on held-out students. Before
+              that, I built backend systems for AI-driven career insights at Yolgen.
             </p>
             <p className="text-muted-foreground leading-relaxed">
-              Currently seeking Summer 2026 internships where I can contribute to backend infrastructure, 
-              distributed systems, or AI/ML engineering.
+              I'm looking for Summer 2027 internships in ML engineering, ML infrastructure or backend, and
+              for undergraduate research in AI for education.
             </p>
           </div>
 
@@ -32,9 +32,9 @@ export const About = () => {
                 <GraduationCap size={20} className="text-primary" />
                 <h3 className="font-semibold text-foreground">Education</h3>
               </div>
-              <p className="text-foreground font-medium">Arizona State University</p>
-              <p className="text-sm text-muted-foreground">B.S. Computer Science • Expected May 2028</p>
-              <p className="text-sm text-muted-foreground">GPA: 3.85</p>
+              <p className="text-foreground font-medium">University of Wisconsin–Madison</p>
+              <p className="text-sm text-muted-foreground">B.S. Computer Sciences, Data Science Certificate • Expected May 2028</p>
+              <p className="text-sm text-muted-foreground">GPA: 3.79 • Transferred from Arizona State University</p>
             </div>
 
             <div className="bg-card border border-border rounded-lg p-5 hover-lift hover:border-primary/30 transition-all duration-300">
@@ -44,8 +44,7 @@ export const About = () => {
               </div>
               <ul className="space-y-1 text-sm text-muted-foreground">
                 <li>• Dean's List</li>
-                <li>• Scholarship Recipient</li>
-                <li>• 2nd Place, DevHacks 2025</li>
+                <li>• 2nd of 130+ teams, SunHacks 2025</li>
               </ul>
             </div>
 
@@ -54,7 +53,7 @@ export const About = () => {
                 <MapPin size={20} className="text-primary" />
                 <h3 className="font-semibold text-foreground">Location</h3>
               </div>
-              <p className="text-sm text-muted-foreground">Tempe, AZ</p>
+              <p className="text-sm text-muted-foreground">Madison, WI</p>
             </div>
           </div>
         </div>
